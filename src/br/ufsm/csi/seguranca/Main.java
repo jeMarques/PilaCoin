@@ -1,34 +1,26 @@
 package br.ufsm.csi.seguranca;
 
+import br.ufsm.csi.seguranca.controllers.MensagemController;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.util.Conection;
 import br.ufsm.csi.seguranca.util.Network;
 import br.ufsm.csi.seguranca.util.RSAUtil;
 
+import java.awt.event.ActionListener;
+import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.*;
+import java.util.EventListener;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         // write your code here
-        Mensagem mensagem = new Mensagem();
-        mensagem.setPorta(3000);
-        mensagem.setEndereco(InetAddress.getLocalHost());
-        mensagem.setIdOrigem("Jeferson_Marques");
-        mensagem.setTipo(Mensagem.TipoMensagem.DISCOVER);
-        mensagem.setChavePublica(RSAUtil.getPublicKey("public_key.der"));
-        System.out.println("Sending message..");
-        Network net = new Network(3333, 3000);
-        net.sendMessage(Conection.serializeObject(mensagem));
-        System.out.println("Sending message..");
-        Thread.sleep(5000L);
-        net.sendMessage(Conection.serializeObject(mensagem));
-        System.out.println("Sending message..");
-        Thread.sleep(5000L);
-        net.sendMessage(Conection.serializeObject(mensagem));
-        System.out.println("Sending message..");
+        Network net = new Network(3333, 3333);
+        MensagemController controller = new MensagemController();
+
+        net.recebeuMensagemListener.setMensagemListener();
 
 
         // net.listenManual();

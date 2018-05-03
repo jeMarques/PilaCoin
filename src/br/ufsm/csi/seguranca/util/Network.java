@@ -1,8 +1,12 @@
 package br.ufsm.csi.seguranca.util;
 
+import br.ufsm.csi.seguranca.interfaces.MensagemHandler;
+import br.ufsm.csi.seguranca.interfaces.MensagensListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 
+import java.beans.EventHandler;
 import java.net.*;
+import java.util.EventListener;
 
 /**
  * Created by cpol on 24/04/2018.
@@ -12,6 +16,12 @@ public class Network {
     InetAddress address;
     int port;
     int portReceive;
+
+    Thread listen;
+    Thread sendDiscover;
+
+    public MensagemHandler recebeuMensagemListener;
+
     public Network(int portsend, int portreceive) throws UnknownHostException {
         try {
             socket = new DatagramSocket();
@@ -27,7 +37,7 @@ public class Network {
     }
 
     public void listenThread() {
-        new Thread(() -> {
+        this.listen = new Thread(() -> {
             while (true) {
                 System.out.println("Thread listening..");
                 try {
@@ -38,31 +48,34 @@ public class Network {
                     sock.receive(packet);
                     Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
                     System.out.println("Received: " + mensagem.getTipo());
+
                     sock.close();
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
                 }
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
             }
-        }).start();
+        });
+        this.listen.start();
     }
     public void sendDiscover() {
-        new Thread(() -> {
+        this.sendDiscover = new Thread(() -> {
             while (true) {
                 try {
-                    System.out.println("Thread listening..");
+                    System.out.println("Sending discover..");
                     Mensagem mensagem = new Mensagem();
-                    mensagem.setPorta(3000);
+                    mensagem.setPorta(this.portReceive);
                     mensagem.setEndereco(InetAddress.getLocalHost());
                     mensagem.setIdOrigem("Jeferson_Marques");
                     mensagem.setTipo(Mensagem.TipoMensagem.DISCOVER);
                     mensagem.setChavePublica(RSAUtil.getPublicKey("public_key.der"));
                     byte[] buf = Conection.serializeObject(mensagem);
                     DatagramPacket packet = new DatagramPacket(buf, buf.length, address, port);
+
                     socket.send(packet);
                 } catch (Exception e) {
                     System.err.println("Sending failed. " + e.getMessage());
@@ -74,7 +87,8 @@ public class Network {
                 }
 
             }
-        }).start();
+        });
+        this.sendDiscover.start();
 
     }
 
