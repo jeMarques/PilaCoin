@@ -1,7 +1,6 @@
 package br.ufsm.csi.seguranca.util;
 
 import br.ufsm.csi.seguranca.interfaces.MensagemHandler;
-import br.ufsm.csi.seguranca.interfaces.MensagensListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 
 import java.beans.EventHandler;

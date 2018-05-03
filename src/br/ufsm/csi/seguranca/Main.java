@@ -20,7 +20,7 @@ public class Main {
         Network net = new Network(3333, 3333);
         MensagemController controller = new MensagemController();
 
-        net.recebeuMensagemListener.setMensagemListener();
+       // net.recebeuMensagemListener.setMensagemListener();
 
 
         // net.listenManual();
