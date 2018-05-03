@@ -13,10 +13,22 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // write your code here
-        Network net = new Network(3333,3000);
-
-
-
+        Mensagem mensagem = new Mensagem();
+        mensagem.setPorta(3000);
+        mensagem.setEndereco(InetAddress.getLocalHost());
+        mensagem.setIdOrigem("Jeferson_Marques");
+        mensagem.setTipo(Mensagem.TipoMensagem.DISCOVER);
+        mensagem.setChavePublica(RSAUtil.getPublicKey("public_key.der"));
+        System.out.println("Sending message..");
+        Network net = new Network(3333, 3000);
+        net.sendMessage(Conection.serializeObject(mensagem));
+        System.out.println("Sending message..");
+        Thread.sleep(5000L);
+        net.sendMessage(Conection.serializeObject(mensagem));
+        System.out.println("Sending message..");
+        Thread.sleep(5000L);
+        net.sendMessage(Conection.serializeObject(mensagem));
+        System.out.println("Sending message..");
 
 
         // net.listenManual();
