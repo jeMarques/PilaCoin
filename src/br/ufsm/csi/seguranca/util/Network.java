@@ -1,6 +1,6 @@
 package br.ufsm.csi.seguranca.util;
 
-import br.ufsm.csi.seguranca.interfaces.MensagemHandler;
+import br.ufsm.csi.seguranca.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 
 import java.beans.EventHandler;
@@ -18,8 +18,6 @@ public class Network {
 
     Thread listen;
     Thread sendDiscover;
-
-    public MensagemHandler recebeuMensagemListener;
 
     public Network(int portsend, int portreceive) throws UnknownHostException {
         try {
@@ -46,8 +44,8 @@ public class Network {
                             buf.length);
                     sock.receive(packet);
                     Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
-                    System.out.println("Received: " + mensagem.getTipo());
-
+                    //System.out.println("Received: " + mensagem.getTipo());
+                    MensagemListener.RecebeuMensagem(mensagem.getTipo().toString());
                     sock.close();
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
