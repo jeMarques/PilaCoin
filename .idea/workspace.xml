@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f111d9d3-74c5-48dd-a3db-49faeb953ac9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -725,7 +722,7 @@
       <workItem from="1525053434146" duration="1118000" />
       <workItem from="1525372519266" duration="1979000" />
       <workItem from="1526409873459" duration="1448000" />
-      <workItem from="1526412314457" duration="888000" />
+      <workItem from="1526412314457" duration="916000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit.">
       <created>1525043446859</created>
@@ -832,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526411913343</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Finally i created this fucking listeners!">
+      <created>1526413212806</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1526413212806</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11707000" />
+    <option name="totallyTimeSpent" value="11735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
