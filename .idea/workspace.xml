@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f111d9d3-74c5-48dd-a3db-49faeb953ac9" name="Default" comment="Fixing network">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="f111d9d3-74c5-48dd-a3db-49faeb953ac9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/LEIAME" afterPath="$PROJECT_DIR$/out/production/PilaCoin/LEIAME" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/pila/model/Mensagem$TipoMensagem.class" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/pila/model/Mensagem$TipoMensagem.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/pila/model/Mensagem.class" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/pila/model/Mensagem.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/MensagemListener.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/MensagemListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,8 +104,8 @@
       <file leaf-file-name="LEIAME" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LEIAME">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -824,11 +816,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526413212806</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Working on Mining.">
+      <created>1526752312563</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1526752312563</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17997000" />
+    <option name="totallyTimeSpent" value="18037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-8" width="1871" height="1096" extended-state="6" />
@@ -844,7 +843,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15902816" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -854,7 +853,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -914,7 +913,8 @@
     <MESSAGE value="trying to create event listeners" />
     <MESSAGE value="Changing some stuff" />
     <MESSAGE value="Finally i created this fucking listeners!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally i created this fucking listeners!" />
+    <MESSAGE value="Working on Mining." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on Mining." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1164,6 +1164,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="315" column="42" lean-forward="true" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LEIAME">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
           <folding />
         </state>
       </provider>
