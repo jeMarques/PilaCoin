@@ -1,4 +1,6 @@
-package br.ufsm.csi.seguranca;
+package br.ufsm.csi.seguranca.listeners;
+
+import br.ufsm.csi.seguranca.pila.model.Mensagem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,14 +11,12 @@ import java.util.List;
 public class MensagemListener {
 
         private static final List<Listener> listeners = new ArrayList<>();
-
-
-        public static void RecebeuMensagem(String Mensagem) {
+        public static void RecebeuMensagem(Mensagem Mensagem) {
             fireEvento(Mensagem);
         }
 
         // método a ser chamado para 'enviar' o evento
-        private static void fireEvento(String Mensagem) {
+        private static void fireEvento(Mensagem Mensagem) {
             for (Listener listener : listeners) {
                 listener.evento(Mensagem);  // this opcional
             }
@@ -32,12 +32,10 @@ public class MensagemListener {
             listeners.remove(listener);
         }
 
-        ////////////////////
-
         public interface Listener {
 
             // use um nome mais 'interessante' para o método e para oS dadoS
-            public void evento(String mensagem);
+            public void evento(Mensagem mensagem);
         }
     }
 

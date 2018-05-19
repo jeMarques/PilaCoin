@@ -1,23 +1,22 @@
 package br.ufsm.csi.seguranca.util;
 
-import br.ufsm.csi.seguranca.MensagemListener;
+import br.ufsm.csi.seguranca.global.Me;
+import br.ufsm.csi.seguranca.listeners.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 
-import java.beans.EventHandler;
 import java.net.*;
-import java.util.EventListener;
 
 /**
  * Created by cpol on 24/04/2018.
  */
 public class Network {
-    DatagramSocket socket;
-    InetAddress address;
-    int port;
-    int portReceive;
+    private DatagramSocket socket;
+    private InetAddress address;
+    private int port;
+    private int portReceive;
 
-    Thread listen;
-    Thread sendDiscover;
+    private Thread listen;
+    private Thread sendDiscover;
 
     public Network(int portsend, int portreceive) throws UnknownHostException {
         try {
@@ -45,16 +44,11 @@ public class Network {
                     sock.receive(packet);
                     Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
                     //System.out.println("Received: " + mensagem.getTipo());
-                    MensagemListener.RecebeuMensagem(mensagem.getTipo().toString());
+                    MensagemListener.RecebeuMensagem(mensagem);
                     sock.close();
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
                 }
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
             }
         });
         this.listen.start();
@@ -67,9 +61,9 @@ public class Network {
                     Mensagem mensagem = new Mensagem();
                     mensagem.setPorta(this.portReceive);
                     mensagem.setEndereco(InetAddress.getLocalHost());
-                    mensagem.setIdOrigem("Jeferson_Marques");
+                    mensagem.setIdOrigem(Me.myIDOrigem);
                     mensagem.setTipo(Mensagem.TipoMensagem.DISCOVER);
-                    mensagem.setChavePublica(RSAUtil.getPublicKey("public_key.der"));
+                    mensagem.setChavePublica(Me.MyPubKey());
                     byte[] buf = Conection.serializeObject(mensagem);
                     DatagramPacket packet = new DatagramPacket(buf, buf.length, address, port);
 
