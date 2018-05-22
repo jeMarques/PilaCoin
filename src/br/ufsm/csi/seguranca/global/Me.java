@@ -4,7 +4,7 @@ import java.security.PublicKey;
 
 
 public class Me {
-    public static String myIDOrigem = "JefersonMarques";
+    public static String myIDOrigem = "jmsilva@inf.ufsm.br";
     public static PublicKey MyPubKey() {
         try {
             return RSAUtil.getPublicKey("public_key.der");

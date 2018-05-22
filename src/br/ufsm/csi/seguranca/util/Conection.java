@@ -1,6 +1,8 @@
 package br.ufsm.csi.seguranca.util;
 
 import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by cpol on 19/04/2018.
@@ -16,5 +18,10 @@ public class Conection {
         ByteArrayInputStream bin = new ByteArrayInputStream(obj);
         ObjectInputStream in = new ObjectInputStream(bin);
         return (Serializable) in.readObject();
+    }
+
+    public static byte[] hash(byte[] data) throws NoSuchAlgorithmException {
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+        return messageDigest.digest(data);
     }
 }
