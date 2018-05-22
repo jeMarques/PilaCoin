@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f111d9d3-74c5-48dd-a3db-49faeb953ac9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Conection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Conection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +25,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="255">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -31,17 +34,17 @@
       <file leaf-file-name="LEIAME" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LEIAME">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="45" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="45" />
+            <state relative-caret-position="561">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mining.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="153">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,13 +52,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java">
+      <file leaf-file-name="Network.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+            <state relative-caret-position="407">
+              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mining.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#662#663#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,17 +83,20 @@
       <file leaf-file-name="RSAUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="424">
               <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PilaCoin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/pila/model/PilaCoin.java">
+      <file leaf-file-name="Conection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="23" column="73" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,8 +104,20 @@
       <file leaf-file-name="Me.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MensagemController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,13 +148,13 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/MensagemListener.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/MensagemListener.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
       </list>
     </option>
   </component>
@@ -135,7 +169,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="933" />
+    <option name="width" value="979" />
     <option name="height" value="1087" />
   </component>
   <component name="ProjectView">
@@ -143,6 +177,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -172,6 +208,20 @@
               <item name="PilaCoin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="seguranca" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PilaCoin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PilaCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="seguranca" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PilaCoin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PilaCoin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="seguranca" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -185,15 +235,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/ufsm/SegWeb/PilaCoin/src/br/ufsm/csi/seguranca/global/Me.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PilaCoin-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -365,7 +413,8 @@
       <workItem from="1526409873459" duration="1448000" />
       <workItem from="1526412314457" duration="916000" />
       <workItem from="1526875339985" duration="550000" />
-      <workItem from="1526876036936" duration="2523000" />
+      <workItem from="1526876036936" duration="2985000" />
+      <workItem from="1526960788303" duration="1801000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit.">
       <created>1525043446859</created>
@@ -486,38 +535,45 @@
       <option name="project" value="LOCAL" />
       <updated>1526752312563</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Working on Mining.">
+      <created>1526960320142</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1526960320142</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21110000" />
+    <option name="totallyTimeSpent" value="23373000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="933" height="1087" extended-state="0" />
+    <frame x="-7" y="0" width="979" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32916668" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32916668" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49945593" weight="0.32771337" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5038085" side_tool="true" visible="true" weight="0.39726028" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7508161" weight="0.3308746" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32946146" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33127573" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32916668" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3281893" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30752453" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3068553" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4961915" visible="true" weight="0.39726028" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39915523" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="2" />
@@ -565,7 +621,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="39" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -768,44 +824,10 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/net/DatagramPacket.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/MensagemListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,31 +845,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/LEIAME">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LEIAME">
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="45" />
+        <state relative-caret-position="255">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/pila/model/PilaCoin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="17">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Me.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -856,7 +878,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="424">
           <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
         </state>
       </provider>
@@ -864,7 +886,27 @@
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Conection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+          <caret line="23" column="73" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -873,8 +915,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="469">
+          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

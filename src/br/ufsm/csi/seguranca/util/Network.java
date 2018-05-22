@@ -43,7 +43,6 @@ public class Network {
                             buf.length);
                     sock.receive(packet);
                     Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
-                    //System.out.println("Received: " + mensagem.getTipo());
                     MensagemListener.RecebeuMensagem(mensagem);
                     sock.close();
                 } catch (Exception e) {

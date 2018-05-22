@@ -16,7 +16,7 @@ public class Mining {
 
 
     public Mining() {
-
+        Start();
     }
 
     public void Start() {
@@ -24,7 +24,7 @@ public class Mining {
         StartMiningThread();
     }
     public void Stop() {
-
+        this.miningThread.stop();
     }
 
     public void StartMiningThread() {
@@ -55,8 +55,10 @@ public class Mining {
                     }
                 } while (insideBigInt.compareTo(bigInt) > 0);
 
+                System.out.println("Achou Pila?");
                 //validation
             }
         });
+        this.miningThread.start();
     }
 }
