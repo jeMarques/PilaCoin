@@ -4,12 +4,14 @@ import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.global.Me;
 import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
+import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -93,7 +95,7 @@ public class Network {
         this.sendDiscover.start();
     }
 
-    public static  void sendTroca(ObjetoTroca troca, AES aesSession) throws IOException, ClassNotFoundException, IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+    public static  void exchangeTroca(ObjetoTroca troca, AES aesSession) throws IOException, ClassNotFoundException, IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException {
         Socket conexao;
         if (Server.TCPAddress==null){
             conexao = new Socket("5.189.186.225", Server.PORT);
@@ -110,8 +112,8 @@ public class Network {
             System.out.println("RECEBEU Mensagem: " + retorno.getErro());
         } else if (o instanceof ObjetoTroca) {
             ObjetoTroca retorno = (ObjetoTroca)o;
-            PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(retorno.getObjetoSerializadoCriptografado()));
-            System.out.println("RECEBEU TROCA: " + pila.getAssinaturaMaster().toString());
+            System.out.println("RECEBEU PILA VOU VALIDAR");
+            PilaCoinListener.InvocaValidaObjetoTroca(troca, aesSession);
         }
         conexao.close();
     }

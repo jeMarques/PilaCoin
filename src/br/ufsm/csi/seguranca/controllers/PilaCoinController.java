@@ -20,6 +20,7 @@ import java.security.NoSuchAlgorithmException;
 public class PilaCoinController {
     public PilaCoinController() {
         PilaCoinListener.addValidacaoListener(this::validaPilaCoin);
+        PilaCoinListener.addValidaObjetoTrocaListener(this::checaPilaRecebido);
     }
 
     public void validaPilaCoin(PilaCoin pila) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, IllegalBlockSizeException, IOException, ClassNotFoundException {
@@ -38,6 +39,11 @@ public class PilaCoinController {
         byte[] signature = RsaKeys.CypherWithPrivateKey(Conection.hash(pila_coin_serialized));
         troca.setAssinatura(signature);
 
-        Network.sendTroca(troca, sessionAes);
+        Network.exchangeTroca(troca, sessionAes);
+    }
+
+    public void checaPilaRecebido(ObjetoTroca troca) {
+        PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(retorno.getObjetoSerializadoCriptografado()));
+
     }
 }
