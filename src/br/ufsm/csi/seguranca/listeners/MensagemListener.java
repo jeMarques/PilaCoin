@@ -11,12 +11,12 @@ import java.util.List;
 public class MensagemListener {
 
         private static final List<Listener> listeners = new ArrayList<>();
-        public static void RecebeuMensagem(Mensagem Mensagem) {
+        public static void RecebeuMensagem(Mensagem Mensagem) throws Exception {
             fireEvento(Mensagem);
         }
 
         // método a ser chamado para 'enviar' o evento
-        private static void fireEvento(Mensagem Mensagem) {
+        private static void fireEvento(Mensagem Mensagem) throws Exception {
             for (Listener listener : listeners) {
                 listener.evento(Mensagem);  // this opcional
             }
@@ -35,7 +35,7 @@ public class MensagemListener {
         public interface Listener {
 
             // use um nome mais 'interessante' para o método e para oS dadoS
-            public void evento(Mensagem mensagem);
+            public void evento(Mensagem mensagem) throws Exception;
         }
     }
 

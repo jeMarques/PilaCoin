@@ -1,5 +1,9 @@
 package br.ufsm.csi.seguranca.crypto;
 import br.ufsm.csi.seguranca.global.Me;
+import br.ufsm.csi.seguranca.pila.model.Mensagem;
+import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
+import br.ufsm.csi.seguranca.util.Conection;
+import br.ufsm.csi.seguranca.util.RSAUtil;
 
 import javax.crypto.*;
 import java.io.IOException;
@@ -55,5 +59,32 @@ public class RSA {
     public byte[] CypherWithPrivateKey(byte[] data) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         cipher.init(Cipher.ENCRYPT_MODE, this.privateKey);
         return cipher.doFinal(data);
+    }
+
+    public static byte[] DecypherHashSignature(byte[] data) throws Exception {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, RSAUtil.getMasterPublicKey());
+        return cipher.doFinal(data);
+    }
+
+
+    public static boolean validateSignature(Object mensagemOrTroca) throws Exception {
+        if (mensagemOrTroca instanceof Mensagem) {
+            Mensagem Mensagem = (Mensagem)mensagemOrTroca;
+            byte[] hash_cripto = Mensagem.getAssinatura();
+            byte[] hash_decripto = RSA.DecypherHashSignature(hash_cripto);
+            Mensagem.setAssinatura(null);
+            byte[] hash_mensagem = Conection.hash(Conection.serializeObject(Mensagem));
+
+            return true;
+
+        } else if (mensagemOrTroca instanceof ObjetoTroca) {
+            ObjetoTroca troca = (ObjetoTroca) mensagemOrTroca;
+            byte[] hash_cripto = troca.getAssinatura();
+            byte[] hash_decripto = RSA.DecypherHashSignature(hash_cripto);
+            troca.setAssinatura(null);
+            byte[] hash_mensagem = Conection.hash(Conection.serializeObject(troca));
+            return true;
+        }
     }
 }
