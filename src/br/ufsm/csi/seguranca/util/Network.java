@@ -1,10 +1,16 @@
 package br.ufsm.csi.seguranca.util;
 
 import br.ufsm.csi.seguranca.global.Me;
+import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
+import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.*;
+import java.security.Key;
 
 /**
  * Created by cpol on 24/04/2018.
@@ -79,6 +85,14 @@ public class Network {
             }
         });
         this.sendDiscover.start();
+    }
 
+    public static  void sendTroca(ObjetoTroca troca) throws IOException, ClassNotFoundException {
+        Socket conexao = new Socket(Server.TCPAddress, Server.PORT);
+        ObjectOutputStream out = new ObjectOutputStream(conexao.getOutputStream());
+        out.writeObject(troca);
+
+        ObjectInputStream objIn = new ObjectInputStream(conexao.getInputStream());
+        ObjetoTroca alicePublic = (ObjetoTroca)objIn.readObject();
     }
 }

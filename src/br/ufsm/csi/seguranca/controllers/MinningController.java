@@ -5,8 +5,12 @@ import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 import br.ufsm.csi.seguranca.util.Conection;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Date;
@@ -58,7 +62,11 @@ public class MinningController {
                 } while (insideBigInt.compareTo(bigInt) > 0);
 
                 System.out.println("Achou Pila?");
-                PilaCoinListener.InvocaValidacao(pila);
+                try {
+                    PilaCoinListener.InvocaValidacao(pila);
+                } catch (NoSuchPaddingException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IOException | InvalidKeyException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
                 //validation
             }
         });

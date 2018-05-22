@@ -13,4 +13,12 @@ public class Me {
             return null;
         }
     }
+    public static PublicKey MyPrivateKey() {
+        try {
+            return RSAUtil.getPublicKey("private_key.der");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

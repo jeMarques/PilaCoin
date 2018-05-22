@@ -1,4 +1,6 @@
 package br.ufsm.csi.seguranca.crypto;
+import br.ufsm.csi.seguranca.global.Me;
+
 import javax.crypto.*;
 import java.io.IOException;
 import java.security.*;
@@ -20,6 +22,12 @@ public class RSA {
         this.publicKey = this.kp.getPublic();
         this.privateKey = this.kp.getPrivate();
     }
+    public RSA() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        this.privateKey = Me.MyPrivateKey();
+        this.publicKey = Me.MyPubKey();
+    }
+
+
     public void setPublicKey(Key publicKey) {
         this.publicKey = publicKey;
     }
@@ -43,5 +51,9 @@ public class RSA {
     public byte[] DecipherKey(byte[] aes_key_criptographed) throws InvalidKeyException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
         cipher.init(Cipher.DECRYPT_MODE, this.privateKey);
         return cipher.doFinal(aes_key_criptographed);
+    }
+    public byte[] CypherWithPrivateKey(byte[] data) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        cipher.init(Cipher.ENCRYPT_MODE, this.privateKey);
+        return cipher.doFinal(data);
     }
 }
