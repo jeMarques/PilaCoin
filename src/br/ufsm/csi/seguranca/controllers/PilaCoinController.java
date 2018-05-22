@@ -48,5 +48,6 @@ public class PilaCoinController {
             System.out.println("getIdCriador:" + pila.getIdCriador().toString());
             System.out.println("getDataCriacao:" + pila.getDataCriacao().toString());
             System.out.println("getNumeroMagico:" + pila.getNumeroMagico().toString());
+            System.out.println("getId:" + pila.getId());
     }
 }
