@@ -1,16 +1,22 @@
 package br.ufsm.csi.seguranca.util;
 
+import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.global.Me;
 import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
+import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.*;
+import java.security.InvalidKeyException;
 import java.security.Key;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by cpol on 24/04/2018.
@@ -87,12 +93,26 @@ public class Network {
         this.sendDiscover.start();
     }
 
-    public static  void sendTroca(ObjetoTroca troca) throws IOException, ClassNotFoundException {
-        Socket conexao = new Socket(Server.TCPAddress, Server.PORT);
+    public static  void sendTroca(ObjetoTroca troca, AES aesSession) throws IOException, ClassNotFoundException, IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+        Socket conexao;
+        if (Server.TCPAddress==null){
+            conexao = new Socket("5.189.186.225", Server.PORT);
+        } else {
+            conexao =  new Socket(Server.TCPAddress, Server.PORT);
+        }
         ObjectOutputStream out = new ObjectOutputStream(conexao.getOutputStream());
         out.writeObject(troca);
 
         ObjectInputStream objIn = new ObjectInputStream(conexao.getInputStream());
-        ObjetoTroca alicePublic = (ObjetoTroca)objIn.readObject();
+        Object o = objIn.readObject();
+        if (o instanceof Mensagem) {
+            Mensagem retorno = (Mensagem)o;
+            System.out.println("RECEBEU Mensagem: " + retorno.getErro());
+        } else if (o instanceof ObjetoTroca) {
+            ObjetoTroca retorno = (ObjetoTroca)o;
+            PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(retorno.getObjetoSerializadoCriptografado()));
+            System.out.println("RECEBEU TROCA: " + pila.getAssinaturaMaster().toString());
+        }
+        conexao.close();
     }
 }

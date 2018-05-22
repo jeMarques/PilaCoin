@@ -1,5 +1,7 @@
 package br.ufsm.csi.seguranca.global;
 import br.ufsm.csi.seguranca.util.RSAUtil;
+
+import java.security.PrivateKey;
 import java.security.PublicKey;
 
 
@@ -13,9 +15,9 @@ public class Me {
             return null;
         }
     }
-    public static PublicKey MyPrivateKey() {
+    public static PrivateKey MyPrivateKey() {
         try {
-            return RSAUtil.getPublicKey("private_key.der");
+            return RSAUtil.getPrivateKey("private_key.der");
         } catch (Exception e) {
             e.printStackTrace();
             return null;

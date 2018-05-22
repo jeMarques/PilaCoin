@@ -27,6 +27,12 @@ public class AES {
         return cipher.doFinal(file);
     }
 
+    public byte[] DecipherByte(byte[] file) throws InvalidKeyException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
+        this.aesKeySpec = new SecretKeySpec(this.bytekey, "AES");
+        cipher.init(Cipher.DECRYPT_MODE, this.aesKeySpec);
+        return cipher.doFinal(file);
+    }
+
     public byte[] DecipherByte(byte[] file, byte[] AesByteKey) throws InvalidKeyException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
         this.aesKeySpec = new SecretKeySpec(AesByteKey, "AES");
         cipher.init(Cipher.DECRYPT_MODE, this.aesKeySpec);

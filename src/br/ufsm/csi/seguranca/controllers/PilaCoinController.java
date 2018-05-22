@@ -23,11 +23,13 @@ public class PilaCoinController {
     }
 
     public void validaPilaCoin(PilaCoin pila) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, IllegalBlockSizeException, IOException, ClassNotFoundException {
+
         AES sessionAes = new AES(256);
         byte[] aes_key_criptografed = RSA.CipherKey(sessionAes.bytekey, Server.ServerPublicKey());
         byte[] pila_coin_serialized = Conection.serializeObject(pila);
         byte[] pila_coin_cypher = sessionAes.CipherByte(pila_coin_serialized);
         ObjetoTroca troca = new ObjetoTroca();
+
         troca.setChavePublica(Me.MyPubKey());
         troca.setChaveSessao(aes_key_criptografed);
         troca.setObjetoSerializadoCriptografado(pila_coin_cypher);
@@ -36,6 +38,6 @@ public class PilaCoinController {
         byte[] signature = RsaKeys.CypherWithPrivateKey(Conection.hash(pila_coin_serialized));
         troca.setAssinatura(signature);
 
-        Network.sendTroca(troca);
+        Network.sendTroca(troca, sessionAes);
     }
 }
