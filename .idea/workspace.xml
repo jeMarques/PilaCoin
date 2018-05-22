@@ -6,11 +6,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Conection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Conection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Mining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +31,8 @@
       <file leaf-file-name="LEIAME" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LEIAME">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="391">
+              <caret line="23" column="54" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="23" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -80,11 +77,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RSAUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RSAUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+            <state relative-caret-position="374">
+              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+              <folding>
+                <element signature="method#getPrivateKey#0;class#RSAUtil#0" />
+                <element signature="method#getPublicKey#0;class#RSAUtil#0" />
+                <element signature="method#getMasterPublicKey#0;class#RSAUtil#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MensagemController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MensagemController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+            <state relative-caret-position="221">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,7 +143,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/.gitignore" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/interfaces/MensagensListener.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/interfaces/MensagemHandler.java" />
@@ -155,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Server.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java" />
       </list>
     </option>
   </component>
@@ -414,7 +416,7 @@
       <workItem from="1526412314457" duration="916000" />
       <workItem from="1526875339985" duration="550000" />
       <workItem from="1526876036936" duration="2985000" />
-      <workItem from="1526960788303" duration="1801000" />
+      <workItem from="1526960788303" duration="2135000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit.">
       <created>1525043446859</created>
@@ -542,11 +544,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526960320142</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Working on Save Serve information.">
+      <created>1526962617330</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1526962617330</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23373000" />
+    <option name="totallyTimeSpent" value="23707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="979" height="1087" extended-state="0" />
@@ -558,10 +567,10 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5038085" side_tool="true" visible="true" weight="0.39726028" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5038085" side_tool="true" weight="0.39726028" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7508161" weight="0.3308746" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7508161" visible="true" weight="0.3308746" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32946146" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3281893" />
       <window_info id="Capture Tool" order="2" />
@@ -572,7 +581,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4961915" visible="true" weight="0.39726028" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4961915" weight="0.39726028" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -617,7 +626,8 @@
     <MESSAGE value="Changing some stuff" />
     <MESSAGE value="Finally i created this fucking listeners!" />
     <MESSAGE value="Working on Mining." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on Mining." />
+    <MESSAGE value="Working on Save Serve information." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on Save Serve information." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -845,13 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LEIAME">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -873,13 +876,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -929,10 +925,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        <state relative-caret-position="221">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LEIAME">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/RSAUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <folding>
+            <element signature="method#getPrivateKey#0;class#RSAUtil#0" />
+            <element signature="method#getPublicKey#0;class#RSAUtil#0" />
+            <element signature="method#getMasterPublicKey#0;class#RSAUtil#0" />
           </folding>
         </state>
       </provider>

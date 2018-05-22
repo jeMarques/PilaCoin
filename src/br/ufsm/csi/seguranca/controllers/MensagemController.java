@@ -14,7 +14,7 @@ public class MensagemController {
 
     }
     public void recebeuMensagem(Mensagem Mensagem) {
-        System.out.println("Recebendo Mensagem 1: " + Mensagem);
+        System.out.println("Recebeu Mensagem: " + Mensagem.getTipo());
         switch (Mensagem.getTipo()) {
             case DISCOVER:
                 //salvar outros usuarios

@@ -20,6 +20,7 @@ public class RSAUtil {
         A sua chave privada estar no arquivo Master_private_key.der e a pblica no arquivo Master_public_key.der. Utilize esta classe
         para carregar estes arquivos em objetos PublicKey e PrivateKey do Java.
     */
+    private static PublicKey MASTER_PUB_KEY;
 
     public static PrivateKey getPrivateKey(String filename) throws Exception {
 
@@ -30,8 +31,6 @@ public class RSAUtil {
         KeyFactory kf = KeyFactory.getInstance("RSA");
         return kf.generatePrivate(spec);
     }
-
-
     public static PublicKey getPublicKey(String filename) throws Exception
     {
         byte[] keyBytes = Files.readAllBytes(Paths.get(filename));
@@ -41,9 +40,6 @@ public class RSAUtil {
         KeyFactory kf = KeyFactory.getInstance("RSA");
         return kf.generatePublic(spec);
     }
-
-    private static PublicKey MASTER_PUB_KEY;
-
     public static PublicKey getMasterPublicKey() throws Exception {
         synchronized (RSAUtil.class) {
             if (MASTER_PUB_KEY == null) {
