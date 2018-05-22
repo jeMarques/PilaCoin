@@ -95,7 +95,7 @@ public class Network {
         this.sendDiscover.start();
     }
 
-    public static  void exchangeTroca(ObjetoTroca troca, AES aesSession) throws IOException, ClassNotFoundException, IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException {
+    public static  void exchangeTroca(ObjetoTroca troca, AES aesSession) throws Exception {
         Socket conexao;
         if (Server.TCPAddress==null){
             conexao = new Socket("5.189.186.225", Server.PORT);

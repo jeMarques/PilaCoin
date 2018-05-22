@@ -24,18 +24,18 @@ public class PilaCoinListener {
     private static final List<TransferenciaListener> Tlisteners = new ArrayList<>();
     private static final List<ValidaObjetoTrocaListener> OTlisteners = new ArrayList<>();
 
-    public static void InvocaValidacao(PilaCoin pila) throws NoSuchPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException, IOException, ClassNotFoundException {
+    public static void InvocaValidacao(PilaCoin pila) throws Exception {
         fireValidacaoEvent(pila);
     }
     public static void InvocaTransferencia(PilaCoin pila) {
         fireTransferenciaEvent(pila);
     }
-    public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, ClassNotFoundException, InvalidKeyException, IOException {
+    public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws Exception {
         fireValidaObjetoTrocaListener(troca, aesSession);
     }
 
     // método a ser chamado para 'enviar' o evento
-    private static void fireValidacaoEvent(PilaCoin pila) throws NoSuchPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException, IOException, ClassNotFoundException {
+    private static void fireValidacaoEvent(PilaCoin pila) throws Exception {
         for (ValidacaoListener listener : Vlisteners) {
             listener.ValidacaoEvento(pila);  // this opcional
         }
@@ -46,7 +46,7 @@ public class PilaCoinListener {
         }
     }
 
-    private static void fireValidaObjetoTrocaListener(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, IOException, InvalidKeyException, ClassNotFoundException {
+    private static void fireValidaObjetoTrocaListener(ObjetoTroca troca, AES aesSession) throws Exception {
         for (ValidaObjetoTrocaListener listener : OTlisteners) {
             listener.ValidaObjetoTrocaEvento(troca, aesSession);  // this opcional
         }
@@ -76,13 +76,13 @@ public class PilaCoinListener {
     }
 
     public interface ValidacaoListener {
-        public void ValidacaoEvento(PilaCoin pila) throws NoSuchAlgorithmException, NoSuchPaddingException, BadPaddingException, InvalidKeyException, IllegalBlockSizeException, IOException, ClassNotFoundException;
+        public void ValidacaoEvento(PilaCoin pila) throws Exception;
     }
     public interface TransferenciaListener {
         public void TransferenciaEvento(PilaCoin pila);
     }
     public interface ValidaObjetoTrocaListener {
-        public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, ClassNotFoundException, InvalidKeyException, IOException;
+        public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws Exception;
     }
 }
 

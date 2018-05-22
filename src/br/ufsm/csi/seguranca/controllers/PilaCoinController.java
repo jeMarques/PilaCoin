@@ -23,7 +23,7 @@ public class PilaCoinController {
         PilaCoinListener.addValidaObjetoTrocaListener(this::checaPilaRecebido);
     }
 
-    public void validaPilaCoin(PilaCoin pila) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, IllegalBlockSizeException, IOException, ClassNotFoundException {
+    public void validaPilaCoin(PilaCoin pila) throws Exception {
 
         AES sessionAes = new AES(128);
         byte[] aes_key_criptografed = RSA.CipherKey(sessionAes.bytekey, Server.ServerPublicKey());
@@ -42,8 +42,8 @@ public class PilaCoinController {
         Network.exchangeTroca(troca, sessionAes);
     }
 
-    public void checaPilaRecebido(ObjetoTroca troca, AES aesSession) throws IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException, IOException, ClassNotFoundException {
-        PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(troca.getObjetoSerializadoCriptografado()));
+    public void checaPilaRecebido(ObjetoTroca troca, AES aesSession) throws Exception {
+            PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(troca.getObjetoSerializadoCriptografado()));
 
     }
 }

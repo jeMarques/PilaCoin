@@ -64,7 +64,7 @@ public class MinningController {
                 System.out.println("Achou Pila?");
                 try {
                     PilaCoinListener.InvocaValidacao(pila);
-                } catch (NoSuchPaddingException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | IOException | InvalidKeyException | ClassNotFoundException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 //validation

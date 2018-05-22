@@ -8,6 +8,7 @@ import br.ufsm.csi.seguranca.util.RSAUtil;
 import javax.crypto.*;
 import java.io.IOException;
 import java.security.*;
+import java.util.Arrays;
 
 /**
  * Created by cpol on 29/03/2018.
@@ -75,16 +76,30 @@ public class RSA {
             byte[] hash_decripto = RSA.DecypherHashSignature(hash_cripto);
             Mensagem.setAssinatura(null);
             byte[] hash_mensagem = Conection.hash(Conection.serializeObject(Mensagem));
-
-            return true;
-
+            if (!Arrays.equals(hash_decripto,hash_mensagem)) {
+                System.out.println("Mensagem não autentico..");
+                return false;
+            } else {
+                return true;
+            }
         } else if (mensagemOrTroca instanceof ObjetoTroca) {
-            ObjetoTroca troca = (ObjetoTroca) mensagemOrTroca;
-            byte[] hash_cripto = troca.getAssinatura();
-            byte[] hash_decripto = RSA.DecypherHashSignature(hash_cripto);
-            troca.setAssinatura(null);
-            byte[] hash_mensagem = Conection.hash(Conection.serializeObject(troca));
-            return true;
+            try {
+                ObjetoTroca troca = (ObjetoTroca) mensagemOrTroca;
+                byte[] hash_cripto = troca.getAssinatura();
+                byte[] hash_decripto = RSA.DecypherHashSignature(hash_cripto);
+                troca.setAssinatura(null);
+                byte[] hash_mensagem = Conection.hash(Conection.serializeObject(troca));
+                if (!Arrays.equals(hash_decripto, hash_mensagem)) {
+                    System.out.println("Troca não autentico..");
+                    return false;
+                } else {
+                    return true;
+                }
+            } catch (Exception e) {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 }
