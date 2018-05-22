@@ -20,10 +20,11 @@ public class AES {
         keyGen.init(keysize);
         this.aesKey = keyGen.generateKey();
         this.bytekey = aesKey.getEncoded();
+        this.aesKeySpec = new SecretKeySpec(this.bytekey, "AES");
     }
 
     public byte[] CipherByte(byte[] file) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
-        cipher.init(Cipher.ENCRYPT_MODE, this.aesKey);
+        cipher.init(Cipher.ENCRYPT_MODE, this.aesKeySpec);
         return cipher.doFinal(file);
     }
 

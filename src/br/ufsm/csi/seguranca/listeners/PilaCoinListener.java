@@ -1,5 +1,6 @@
 package br.ufsm.csi.seguranca.listeners;
 
+import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
@@ -29,8 +30,8 @@ public class PilaCoinListener {
     public static void InvocaTransferencia(PilaCoin pila) {
         fireTransferenciaEvent(pila);
     }
-    public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) {
-        fireValidaObjetoTrocaListener(troca);
+    public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, ClassNotFoundException, InvalidKeyException, IOException {
+        fireValidaObjetoTrocaListener(troca, aesSession);
     }
 
     // método a ser chamado para 'enviar' o evento
@@ -45,9 +46,9 @@ public class PilaCoinListener {
         }
     }
 
-    private static void fireValidaObjetoTrocaListener(ObjetoTroca troca) {
+    private static void fireValidaObjetoTrocaListener(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, IOException, InvalidKeyException, ClassNotFoundException {
         for (ValidaObjetoTrocaListener listener : OTlisteners) {
-            listener.ValidaObjetoTrocaEvento(troca);  // this opcional
+            listener.ValidaObjetoTrocaEvento(troca, aesSession);  // this opcional
         }
     }
 
@@ -81,7 +82,7 @@ public class PilaCoinListener {
         public void TransferenciaEvento(PilaCoin pila);
     }
     public interface ValidaObjetoTrocaListener {
-        public void ValidaObjetoTrocaEvento(ObjetoTroca troca);
+        public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws BadPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, ClassNotFoundException, InvalidKeyException, IOException;
     }
 }
 

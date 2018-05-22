@@ -36,4 +36,8 @@ public class MensagemController {
         }
 
     }
+
+    public void sendMessage() {
+
+    }
 }
