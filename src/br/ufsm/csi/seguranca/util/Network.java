@@ -81,14 +81,4 @@ public class Network {
         this.sendDiscover.start();
 
     }
-
-    public void sendMessage(byte[] message) {
-        byte[] buf = message;
-        DatagramPacket packet = new DatagramPacket(buf, buf.length, address, port);
-        try {
-            socket.send(packet);
-        } catch (Exception e) {
-            System.err.println("Sending failed. " + e.getMessage());
-        }
-    }
 }

@@ -1,7 +1,9 @@
-package br.ufsm.csi.seguranca.util;
+package br.ufsm.csi.seguranca.controllers;
 
 import br.ufsm.csi.seguranca.global.Me;
+import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
+import br.ufsm.csi.seguranca.util.Conection;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -9,13 +11,13 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Date;
 
-public class Mining {
+public class MinningController {
     Thread miningThread;
     boolean mining = false;
     private static final BigInteger bigInt = new BigInteger("99999998000000000000000000000000000000000000000000000000000000000000000");
 
 
-    public Mining() {
+    public MinningController() {
         Start();
     }
 
@@ -56,6 +58,7 @@ public class Mining {
                 } while (insideBigInt.compareTo(bigInt) > 0);
 
                 System.out.println("Achou Pila?");
+                PilaCoinListener.InvocaValidacao(pila);
                 //validation
             }
         });

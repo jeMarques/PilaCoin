@@ -1,8 +1,7 @@
 package br.ufsm.csi.seguranca;
 
 import br.ufsm.csi.seguranca.controllers.MensagemController;
-import br.ufsm.csi.seguranca.listeners.MensagemListener;
-import br.ufsm.csi.seguranca.util.Mining;
+import br.ufsm.csi.seguranca.controllers.MinningController;
 import br.ufsm.csi.seguranca.util.Network;
 
 public class Main {
@@ -14,7 +13,7 @@ public class Main {
         MensagemController controller = new MensagemController();
 
         //instancia minerador
-        Mining mining = new Mining();
+        MinningController minningController = new MinningController();
 
 
 
