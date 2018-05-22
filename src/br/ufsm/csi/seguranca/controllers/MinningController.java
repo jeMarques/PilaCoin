@@ -61,7 +61,6 @@ public class MinningController {
                     }
                 } while (insideBigInt.compareTo(bigInt) > 0);
 
-                System.out.println("Achou Pila?");
                 try {
                     PilaCoinListener.InvocaValidacao(pila);
                 } catch (Exception e) {

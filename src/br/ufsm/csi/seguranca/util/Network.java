@@ -49,7 +49,6 @@ public class Network {
     public void listenThread() {
         this.listen = new Thread(() -> {
             while (true) {
-                System.out.println("Thread listening..");
                 try {
                     byte[] buf = new byte[1500];
                     DatagramSocket sock = new DatagramSocket(portReceive);
@@ -61,6 +60,7 @@ public class Network {
                     sock.close();
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
+                    break;
                 }
             }
         });
@@ -70,7 +70,6 @@ public class Network {
         this.sendDiscover = new Thread(() -> {
             while (true) {
                 try {
-                    System.out.println("Sending discover..");
                     Mensagem mensagem = new Mensagem();
                     mensagem.setPorta(this.portReceive);
                     mensagem.setEndereco(InetAddress.getLocalHost());
@@ -109,10 +108,9 @@ public class Network {
         Object o = objIn.readObject();
         if (o instanceof Mensagem) {
             Mensagem retorno = (Mensagem)o;
-            System.out.println("RECEBEU Mensagem: " + retorno.getErro());
+            System.out.println("RECEBEU Mensagem TCP (Erro): " + retorno.getErro());
         } else if (o instanceof ObjetoTroca) {
             ObjetoTroca retorno = (ObjetoTroca)o;
-            System.out.println("RECEBEU PILA VOU VALIDAR");
             PilaCoinListener.InvocaValidaObjetoTroca(troca, aesSession);
         }
         conexao.close();

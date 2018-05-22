@@ -9,7 +9,7 @@ import br.ufsm.csi.seguranca.util.Network;
 public class Main {
     public static void main(String[] args) throws Exception {
         // instancia classe de conexão.
-        Network net = new Network(3333, 3000);
+        Network net = new Network(3333, 3333);
 
         //instancia controllers
         MensagemController mensagemController = new MensagemController();

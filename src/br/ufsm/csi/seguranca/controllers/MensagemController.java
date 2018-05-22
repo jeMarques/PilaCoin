@@ -21,9 +21,17 @@ public class MensagemController {
         switch (Mensagem.getTipo()) {
             case DISCOVER:
                 //salvar outros usuarios
+                System.out.println("Recebeu discover, outros usuarios..");
+                System.out.println("ID: " + Mensagem.getIdOrigem());
+                System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
+                System.out.println("PORTA: " + Mensagem.getPorta());
+                //TODO devo salvar
                 break;
             case DISCOVER_RESP:
                 if (RSA.validateSignature(Mensagem)) {
+                    System.out.println("Recebeu discover RESP, salvando dados do server..");
+                    System.out.println("PORT: " + Mensagem.getPorta());
+                    System.out.println("ENDEREÇO: " + Mensagem.getEndereco());
                     Server.ipSync = true;
                     Server.PORT = Mensagem.getPorta();
                     Server.TCPAddress = Mensagem.getEndereco();
@@ -32,6 +40,8 @@ public class MensagemController {
                 }
                 break;
             case PILA_TRANSF:
+
+
                 break;
             case ERRO:
                 System.out.println("Aconteceu um erro: " + Mensagem.getErro());

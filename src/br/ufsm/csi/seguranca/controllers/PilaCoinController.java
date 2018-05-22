@@ -44,6 +44,9 @@ public class PilaCoinController {
 
     public void checaPilaRecebido(ObjetoTroca troca, AES aesSession) throws Exception {
             PilaCoin pila = (PilaCoin)Conection.deserializeObject(aesSession.DecipherByte(troca.getObjetoSerializadoCriptografado()));
-
+            System.out.println("Infos do pila recebido");
+            System.out.println("getIdCriador:" + pila.getIdCriador().toString());
+            System.out.println("getDataCriacao:" + pila.getDataCriacao().toString());
+            System.out.println("getNumeroMagico:" + pila.getNumeroMagico().toString());
     }
 }
