@@ -4,6 +4,7 @@ import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class PilaCoinListener {
         public void ValidacaoEvento(PilaCoin pila) throws Exception;
     }
     public interface TransferenciaListener {
-        public void TransferenciaEvento(int Quantidade, String idNovoDono);
+        public void TransferenciaEvento(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException;
     }
     public interface ValidaObjetoTrocaListener {
         public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws Exception;

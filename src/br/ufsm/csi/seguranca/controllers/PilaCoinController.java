@@ -22,6 +22,7 @@ public class PilaCoinController {
     public PilaCoinController() {
         PilaCoinListener.addValidacaoListener(this::validaPilaCoin);
         PilaCoinListener.addValidaObjetoTrocaListener(this::checaPilaRecebido);
+        PilaCoinListener.addTransferenciaListener(this::TransferePila);
     }
 
     public void validaPilaCoin(PilaCoin pila) throws Exception {
@@ -56,10 +57,14 @@ public class PilaCoinController {
             System.out.println("Pila salvo.. ");
     }
 
-    public static void TransferePila(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+    public void TransferePila(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+
         PilaCoin pilaForTransfer = File.getPila();
         if (pilaForTransfer!=null) {
 
+
+        } else {
+            System.out.println("Cannot find pila for transfer!");
         }
     }
 }

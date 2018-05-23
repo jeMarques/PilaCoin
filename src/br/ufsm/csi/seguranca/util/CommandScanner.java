@@ -34,7 +34,7 @@ public class CommandScanner {
                             System.out.println("Qtde: " + quantidade);
                             System.out.println("ID: " + destinatario);
 
-                            PilaCoinListener.InvocaTransferencia(File.getPila());
+                            PilaCoinListener.InvocaTransferencia(Integer.parseInt(quantidade),destinatario);
                         }
                     } else if (commands.length == 1) {
                         String comando = commands[0];
