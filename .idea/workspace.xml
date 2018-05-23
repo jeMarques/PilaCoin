@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f111d9d3-74c5-48dd-a3db-49faeb953ac9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Community.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PilaCoin/br/ufsm/csi/seguranca/util/Network.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/PilaCoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/PilaCoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,6 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LEIAME" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LEIAME">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,8 +59,8 @@
       <file leaf-file-name="PilaCoinListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/PilaCoinListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="196">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,8 +83,8 @@
       <file leaf-file-name="PilaCoinController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="70" />
+            <state relative-caret-position="391">
+              <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -100,8 +101,8 @@
       <file leaf-file-name="CommandScanner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="242">
+              <caret line="29" column="64" lean-forward="true" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#329#330#0" expanded="true" />
@@ -116,18 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="37" selection-start-line="36" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Network.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="111" selection-start-line="111" selection-end-line="111" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,13 +154,13 @@
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/MensagemListener.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/crypto/RSA.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MinningController.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/Network.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/MensagemController.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Community.java" />
-        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/File.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java" />
+        <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java" />
         <option value="$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/PilaCoinListener.java" />
       </list>
     </option>
@@ -449,7 +438,7 @@
       <workItem from="1526412314457" duration="916000" />
       <workItem from="1527016192535" duration="3869000" />
       <workItem from="1527020305658" duration="21000" />
-      <workItem from="1527030551737" duration="6067000" />
+      <workItem from="1527030551737" duration="7774000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit.">
       <created>1525043446859</created>
@@ -598,11 +587,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527031674077</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Creating Transfer.">
+      <created>1527036657100</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1527036657100</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Creating Transfer.">
+      <created>1527037007956</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1527037007956</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22316000" />
+    <option name="totallyTimeSpent" value="24023000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,7 +622,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32916668" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32771337" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32771337" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -637,7 +640,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39831403" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39831403" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -692,7 +695,8 @@
     <MESSAGE value="Changing some stuff" />
     <MESSAGE value="Finally i created this fucking listeners!" />
     <MESSAGE value="Creating Pila Validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating Pila Validation" />
+    <MESSAGE value="Creating Transfer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating Transfer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/pila/model/Transacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -994,18 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/global/Community.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1017,17 +1002,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/util/CommandScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="64" lean-forward="true" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/controllers/PilaCoinController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="58" column="38" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="70" />
+        <state relative-caret-position="391">
+          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/ufsm/csi/seguranca/listeners/PilaCoinListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        <state relative-caret-position="196">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -20,7 +20,7 @@ public class PilaCoinListener {
     public static void InvocaValidacao(PilaCoin pila) throws Exception {
         fireValidacaoEvent(pila);
     }
-    public static void InvocaTransferencia(int Quantidade, String idNovoDono) {
+    public static void InvocaTransferencia(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
         fireTransferenciaEvent(Quantidade,idNovoDono);
     }
     public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws Exception {
@@ -33,7 +33,7 @@ public class PilaCoinListener {
             listener.ValidacaoEvento(pila);  // this opcional
         }
     }
-    private static void fireTransferenciaEvent(int Quantidade, String idNovoDono) {
+    private static void fireTransferenciaEvent(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
         for (TransferenciaListener listener : Tlisteners) {
             listener.TransferenciaEvento(Quantidade, idNovoDono);  // this opcional
         }
