@@ -1,10 +1,11 @@
 package br.ufsm.csi.seguranca.controllers;
 
 import br.ufsm.csi.seguranca.crypto.RSA;
+import br.ufsm.csi.seguranca.global.Community;
 import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
-import br.ufsm.csi.seguranca.util.Conection;
+import br.ufsm.csi.seguranca.server.model.Usuario;
 
 /**
  * Created by cpol on 03/05/2018.
@@ -25,7 +26,15 @@ public class MensagemController {
                 System.out.println("ID: " + Mensagem.getIdOrigem());
                 System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
                 System.out.println("PORTA: " + Mensagem.getPorta());
+
                 //TODO devo salvar
+                Usuario user = new Usuario();
+                user.setChavePublica(Mensagem.getChavePublica());
+                user.setId(Mensagem.getIdOrigem());
+                user.setEndereco(Mensagem.getEndereco());
+
+                Community.addOrUpdateUser(user);
+
                 break;
             case DISCOVER_RESP:
                 if (RSA.validateSignature(Mensagem)) {

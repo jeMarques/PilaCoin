@@ -1,17 +1,9 @@
 package br.ufsm.csi.seguranca.listeners;
 
 import br.ufsm.csi.seguranca.crypto.AES;
-import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,8 +19,8 @@ public class PilaCoinListener {
     public static void InvocaValidacao(PilaCoin pila) throws Exception {
         fireValidacaoEvent(pila);
     }
-    public static void InvocaTransferencia(PilaCoin pila) {
-        fireTransferenciaEvent(pila);
+    public static void InvocaTransferencia(int Quantidade, String idNovoDono) {
+        fireTransferenciaEvent(Quantidade,idNovoDono);
     }
     public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws Exception {
         fireValidaObjetoTrocaListener(troca, aesSession);
@@ -40,9 +32,9 @@ public class PilaCoinListener {
             listener.ValidacaoEvento(pila);  // this opcional
         }
     }
-    private static void fireTransferenciaEvent(PilaCoin pila) {
+    private static void fireTransferenciaEvent(int Quantidade, String idNovoDono) {
         for (TransferenciaListener listener : Tlisteners) {
-            listener.TransferenciaEvento(pila);  // this opcional
+            listener.TransferenciaEvento(Quantidade, idNovoDono);  // this opcional
         }
     }
 
@@ -79,7 +71,7 @@ public class PilaCoinListener {
         public void ValidacaoEvento(PilaCoin pila) throws Exception;
     }
     public interface TransferenciaListener {
-        public void TransferenciaEvento(PilaCoin pila);
+        public void TransferenciaEvento(int Quantidade, String idNovoDono);
     }
     public interface ValidaObjetoTrocaListener {
         public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws Exception;

@@ -9,16 +9,9 @@ import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.*;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by cpol on 24/04/2018.
@@ -92,6 +85,25 @@ public class Network {
             }
         });
         this.sendDiscover.start();
+    }
+
+    public void sendTransfer(PilaCoin pila) {
+        try {
+            Mensagem mensagem = new Mensagem();
+            mensagem.setPorta(this.portReceive);
+            mensagem.setEndereco(InetAddress.getLocalHost());
+            mensagem.setIdOrigem(Me.myIDOrigem);
+            mensagem.setTipo(Mensagem.TipoMensagem.PILA_TRANSF);
+            mensagem.setChavePublica(Me.MyPubKey());
+            mensagem.setPilaCoin(pila);
+            byte[] buf = Conection.serializeObject(mensagem);
+            DatagramPacket packet = new DatagramPacket(buf, buf.length, address, port);
+
+            socket.send(packet);
+        } catch (Exception e) {
+            System.err.println("Sending failed. " + e.getMessage());
+        }
+
     }
 
     public static  void exchangeTroca(ObjetoTroca troca, AES aesSession) throws Exception {

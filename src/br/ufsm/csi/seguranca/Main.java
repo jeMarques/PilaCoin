@@ -14,7 +14,6 @@ public class Main {
 
         //instancia controllers
         CommandScanner scanner = new CommandScanner();
-        Thread.sleep(1000);
         MensagemController mensagemController = new MensagemController();
         PilaCoinController pilaController = new PilaCoinController();
         MinningController minningController = new MinningController();

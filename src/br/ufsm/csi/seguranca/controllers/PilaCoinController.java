@@ -8,6 +8,7 @@ import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 import br.ufsm.csi.seguranca.util.Conection;
+import br.ufsm.csi.seguranca.util.File;
 import br.ufsm.csi.seguranca.util.Network;
 
 import javax.crypto.BadPaddingException;
@@ -49,5 +50,16 @@ public class PilaCoinController {
             System.out.println("getDataCriacao:" + pila.getDataCriacao().toString());
             System.out.println("getNumeroMagico:" + pila.getNumeroMagico().toString());
             System.out.println("getId:" + pila.getId());
+
+            File file = new File(Conection.serializeObject(pila));
+            file.savetoPath("wallet/" + pila.getNumeroMagico() + ".pila");
+            System.out.println("Pila salvo.. ");
+    }
+
+    public static void TransferePila(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+        PilaCoin pilaForTransfer = File.getPila();
+        if (pilaForTransfer!=null) {
+
+        }
     }
 }

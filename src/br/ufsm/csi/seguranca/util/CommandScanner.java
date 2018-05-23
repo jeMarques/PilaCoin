@@ -1,10 +1,8 @@
 package br.ufsm.csi.seguranca.util;
 
-import br.ufsm.csi.seguranca.listeners.MensagemListener;
-import br.ufsm.csi.seguranca.pila.model.Mensagem;
+import br.ufsm.csi.seguranca.global.Community;
+import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
 import java.util.Scanner;
 
 public class CommandScanner {
@@ -15,16 +13,37 @@ public class CommandScanner {
     }
     public void runScannerThread() {
         this.scannerThread = new Thread(() -> {
+            System.out.println("###########################");
+            System.out.println("#                         #");
+            System.out.println("#        PilaCoin         #");
+            System.out.println("#                         #");
+            System.out.println("###########################");
             while (true) {
                 try {
-                    System.out.println("###########################");
-                    System.out.println("#                         #");
-                    System.out.println("#        PilaCoin         #");
-                    System.out.println("#                         #");
-                    System.out.println("###########################");
                     Scanner scanner = new Scanner(System.in);
-                    String comando = scanner.nextLine();
+                    String fullComand = scanner.nextLine();
+                    System.out.println("Comando recebido..");
+                    String[] commands = fullComand.split(":");
+                    if (commands.length == 3) {
+                        String comando = commands[0];
 
+                        if (comando.toLowerCase().equals("t")) {
+                            String quantidade = commands[1];
+                            String destinatario = commands[2];
+                            System.out.println("Transferindo..");
+                            System.out.println("Qtde: " + quantidade);
+                            System.out.println("ID: " + destinatario);
+
+                            PilaCoinListener.InvocaTransferencia(File.getPila());
+                        }
+                    } else if (commands.length == 1) {
+                        String comando = commands[0];
+
+                        if (comando.toLowerCase().equals("lu")) {
+                            System.out.println("Listando usuarios da comunidade..");
+                            Community.showComunnityList();
+                        }
+                    }
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
                     break;
