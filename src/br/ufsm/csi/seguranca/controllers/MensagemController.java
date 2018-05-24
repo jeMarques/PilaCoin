@@ -26,17 +26,20 @@ public class MensagemController {
                 //salvar outros usuarios
                 System.out.println("Recebeu discover, outros usuarios..");
                 System.out.println("ID: " + Mensagem.getIdOrigem());
-                System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
+                //System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
                 System.out.println("PORTA: " + Mensagem.getPorta());
 
                 //TODO devo salvar
-                Usuario user = new Usuario();
-                user.setChavePublica(Mensagem.getChavePublica());
-                user.setId(Mensagem.getIdOrigem());
-                user.setEndereco(Mensagem.getEndereco());
+                try {
+                    Usuario user = new Usuario();
+                    user.setChavePublica(Mensagem.getChavePublica());
+                    user.setId(Mensagem.getIdOrigem());
+                    user.setEndereco(Mensagem.getEndereco());
 
-                Community.addOrUpdateUser(user);
-
+                    Community.addOrUpdateUser(user);
+                } catch (Exception e) {
+                    System.out.println("Erro salvando user on community: " + e.getMessage());
+                }
                 break;
             case DISCOVER_RESP:
                 if (RSA.validateSignature(Mensagem)) {
@@ -53,8 +56,11 @@ public class MensagemController {
             case PILA_TRANSF:
                 System.out.println("Recebeu pila transf");
                 System.out.println("ID: " + Mensagem.getIdOrigem());
-                System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
+                System.out.println("ENDEREÇO: " + Mensagem.getEndereco());
                 System.out.println("PORTA: " + Mensagem.getPorta());
+                System.out.println("PILA: " + Mensagem.getPilaCoin());
+
+
                 File pilaFile = new File("wallet/" + Mensagem.getPilaCoin().getNumeroMagico().toString() + ".pila");
                 if (pilaFile.file==null) {
                     pilaFile = new File(Conection.serializeObject(Mensagem.getPilaCoin()));

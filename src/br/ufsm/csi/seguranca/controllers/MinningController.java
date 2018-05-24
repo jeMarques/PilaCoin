@@ -45,9 +45,9 @@ public class MinningController {
                 BigInteger insideBigInt = null;
 
                 //actual mining
+                SecureRandom sr = new SecureRandom();
                 do {
                     //generate and set magic number
-                    SecureRandom sr = new SecureRandom();
                     Long magicNumber = sr.nextLong();
                     pila.setNumeroMagico(magicNumber);
 

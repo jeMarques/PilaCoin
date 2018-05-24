@@ -11,9 +11,7 @@ import br.ufsm.csi.seguranca.pila.model.MensagemFragmentada;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,9 +48,10 @@ public class Network {
     public void listenThread() {
         this.listen = new Thread(() -> {
             while (true) {
+                DatagramSocket sock = null;
                 try {
                     byte[] buf = new byte[3500];
-                    DatagramSocket sock = new DatagramSocket(portReceive);
+                    sock = new DatagramSocket(portReceive);
                     DatagramPacket packet = new DatagramPacket(buf,
                             buf.length);
                     sock.receive(packet);
@@ -61,6 +60,9 @@ public class Network {
                         MensagemListener.RecebeuMensagem(mensagem);
                     } catch(Exception e) {
                         MensagemFragmentada mensagemFragmentada = (MensagemFragmentada) Conection.deserializeObject(buf);
+                        System.out.println("[Recebeu Mensagem Fragmentada] Ultimo? " + mensagemFragmentada.isUltimo());
+                        System.out.println("[Recebeu Mensagem Fragmentada] Cont? " + mensagemFragmentada.getSequencia());
+
                         if (!mensagemFragmentada.isUltimo()) {
                             outputStream.write( mensagemFragmentada.getFragmento() );
                         } else {
@@ -69,13 +71,18 @@ public class Network {
                             MensagemListener.RecebeuMensagem(mensagem);
                             outputStream = new ByteArrayOutputStream();
                         }
-                        System.out.println("Recebeu Mensagem Fragmentada");
                     }
                     sock.close();
                 } catch (Exception e) {
+                    outputStream = new ByteArrayOutputStream();
+                    if (sock!=null) sock.close();
+                    StringWriter sw = new StringWriter();
+                    PrintWriter pw = new PrintWriter(sw);
+                    e.printStackTrace(pw);
+                    String sStackTrace = sw.toString(); // stack trace as a string
                     System.err.println("Listen Error: " + e.getMessage());
-                    System.err.println("Listen Error: " + e.getStackTrace().toString());
-                    break;
+                    System.err.println(sStackTrace);
+
                 }
             }
         });
@@ -132,7 +139,7 @@ public class Network {
                 mensfrag.setUltimo(fragmentos.length == cont);
                 DatagramPacket packet = new DatagramPacket( Conection.serializeObject(mensfrag),  Conection.serializeObject(mensfrag).length, address, port);
                 socket.send(packet);
-                Thread.sleep(350);
+                Thread.sleep(0);
             }
 
             System.out.println("UDP Send");
@@ -142,6 +149,9 @@ public class Network {
         }
 
     }
+
+    //t:1:meet@alanwgt.com
+    ///t:1:Glenio
 
     public static  void exchangeTroca(ObjetoTroca troca, AES aesSession) throws Exception {
         Socket conexao;
