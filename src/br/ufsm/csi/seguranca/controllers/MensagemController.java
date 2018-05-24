@@ -6,6 +6,8 @@ import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
 import br.ufsm.csi.seguranca.server.model.Usuario;
+import br.ufsm.csi.seguranca.util.Conection;
+import br.ufsm.csi.seguranca.util.File;
 
 /**
  * Created by cpol on 03/05/2018.
@@ -53,16 +55,17 @@ public class MensagemController {
                 System.out.println("ID: " + Mensagem.getIdOrigem());
                 System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
                 System.out.println("PORTA: " + Mensagem.getPorta());
+                File pilaFile = new File("wallet/" + Mensagem.getPilaCoin().getNumeroMagico().toString() + ".pila");
+                if (pilaFile.file==null) {
+                    pilaFile = new File(Conection.serializeObject(Mensagem.getPilaCoin()));
+                }
+                pilaFile.onlySave();
 
                 break;
             case ERRO:
                 System.out.println("Aconteceu um erro: " + Mensagem.getErro());
                 break;
         }
-
-    }
-
-    public void sendMessage() {
 
     }
 }

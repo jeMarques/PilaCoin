@@ -90,4 +90,16 @@ public class File implements Serializable {
         }
         return null;
     }
+    public static File getPilaFile(String numeroMagico) throws IOException, ClassNotFoundException {
+        final java.io.File folder = new java.io.File("wallet/");
+        for (final java.io.File fileEntry : folder.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                System.out.println("Something went wrong");
+            } else {
+                File filePila = new File("wallet/" + numeroMagico + ".pila");
+                return filePila;
+            }
+        }
+        return null;
+    }
 }
