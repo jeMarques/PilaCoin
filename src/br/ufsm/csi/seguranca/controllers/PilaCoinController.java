@@ -4,19 +4,18 @@ import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.crypto.RSA;
 import br.ufsm.csi.seguranca.global.Me;
 import br.ufsm.csi.seguranca.global.Server;
+import br.ufsm.csi.seguranca.listeners.NetworkListener;
 import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
+import br.ufsm.csi.seguranca.pila.model.Transacao;
 import br.ufsm.csi.seguranca.util.Conection;
 import br.ufsm.csi.seguranca.util.File;
 import br.ufsm.csi.seguranca.util.Network;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class PilaCoinController {
     public PilaCoinController() {
@@ -57,14 +56,31 @@ public class PilaCoinController {
             System.out.println("Pila salvo.. ");
     }
 
-    public void TransferePila(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+    public void TransferePila(int Quantidade, String idNovoDono) throws Exception {
+        for (int i = 0; i<Quantidade; i++) {
+            File pilaForTransfer = File.getPilaFile();
+            if (pilaForTransfer!=null) {
+                PilaCoin pila = pilaForTransfer.getPila();
+                List<Transacao> listaTransacoes = pila.getTransacoes();
+                if (listaTransacoes==null) {
+                    listaTransacoes = new ArrayList<>();
+                }
+                Transacao transacao = new Transacao();
+                transacao.setDataTransacao(new Date());
+                transacao.setIdNovoDono(idNovoDono);
+                transacao.setAssinaturaDono(null);
+                transacao.setAssinaturaDono(RSA.CypherWithMyPrivateKey(Conection.hash(Conection.serializeObject(transacao))));
 
-        PilaCoin pilaForTransfer = File.getPila();
-        if (pilaForTransfer!=null) {
+                listaTransacoes.add(transacao);
 
+                pila.setTransacoes(listaTransacoes);
 
-        } else {
-            System.out.println("Cannot find pila for transfer!");
+                NetworkListener.sendTransfer(pila);
+            } else {
+                System.out.println("Cabou os pila, nada para transferir!");
+                break;
+            }
+
         }
     }
 }

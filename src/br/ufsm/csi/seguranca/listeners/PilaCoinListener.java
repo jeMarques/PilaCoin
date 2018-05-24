@@ -4,7 +4,12 @@ import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +25,7 @@ public class PilaCoinListener {
     public static void InvocaValidacao(PilaCoin pila) throws Exception {
         fireValidacaoEvent(pila);
     }
-    public static void InvocaTransferencia(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+    public static void InvocaTransferencia(int Quantidade, String idNovoDono) throws Exception {
         fireTransferenciaEvent(Quantidade,idNovoDono);
     }
     public static void InvocaValidaObjetoTroca(ObjetoTroca troca, AES aesSession) throws Exception {
@@ -33,7 +38,7 @@ public class PilaCoinListener {
             listener.ValidacaoEvento(pila);  // this opcional
         }
     }
-    private static void fireTransferenciaEvent(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException {
+    private static void fireTransferenciaEvent(int Quantidade, String idNovoDono) throws Exception {
         for (TransferenciaListener listener : Tlisteners) {
             listener.TransferenciaEvento(Quantidade, idNovoDono);  // this opcional
         }
@@ -64,7 +69,7 @@ public class PilaCoinListener {
     public static void removeValidacaoListener(ValidacaoListener listener) {
         Vlisteners.remove(listener);
     }
-    public static void removeTrasnsferenciaListener(TransferenciaListener listener) {
+    public static void remoteTransferenciaListener(TransferenciaListener listener) {
         Tlisteners.remove(listener);
     }
 
@@ -72,7 +77,7 @@ public class PilaCoinListener {
         public void ValidacaoEvento(PilaCoin pila) throws Exception;
     }
     public interface TransferenciaListener {
-        public void TransferenciaEvento(int Quantidade, String idNovoDono) throws IOException, ClassNotFoundException;
+        public void TransferenciaEvento(int Quantidade, String idNovoDono) throws Exception;
     }
     public interface ValidaObjetoTrocaListener {
         public void ValidaObjetoTrocaEvento(ObjetoTroca troca, AES aesSession) throws Exception;

@@ -4,14 +4,20 @@ import br.ufsm.csi.seguranca.crypto.AES;
 import br.ufsm.csi.seguranca.global.Me;
 import br.ufsm.csi.seguranca.global.Server;
 import br.ufsm.csi.seguranca.listeners.MensagemListener;
+import br.ufsm.csi.seguranca.listeners.NetworkListener;
 import br.ufsm.csi.seguranca.listeners.PilaCoinListener;
 import br.ufsm.csi.seguranca.pila.model.Mensagem;
+import br.ufsm.csi.seguranca.pila.model.MensagemFragmentada;
 import br.ufsm.csi.seguranca.pila.model.ObjetoTroca;
 import br.ufsm.csi.seguranca.pila.model.PilaCoin;
 
+import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by cpol on 24/04/2018.
@@ -32,6 +38,7 @@ public class Network {
             address = InetAddress.getByName("255.255.255.255");
             port = portsend;
             portReceive = portreceive;
+            NetworkListener.addListener(this::sendTransfer);
         } catch (Exception e) {
             System.err.println("Connection failed. " + e.getMessage());
         }
@@ -39,20 +46,35 @@ public class Network {
         sendDiscover();
     }
 
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
     public void listenThread() {
         this.listen = new Thread(() -> {
             while (true) {
                 try {
-                    byte[] buf = new byte[1500];
+                    byte[] buf = new byte[3500];
                     DatagramSocket sock = new DatagramSocket(portReceive);
                     DatagramPacket packet = new DatagramPacket(buf,
                             buf.length);
                     sock.receive(packet);
-                    Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
-                    MensagemListener.RecebeuMensagem(mensagem);
+                    try {
+                        Mensagem mensagem = (Mensagem) Conection.deserializeObject(buf);
+                        MensagemListener.RecebeuMensagem(mensagem);
+                    } catch(Exception e) {
+                        MensagemFragmentada mensagemFragmentada = (MensagemFragmentada) Conection.deserializeObject(buf);
+                        if (!mensagemFragmentada.isUltimo()) {
+                            outputStream.write( mensagemFragmentada.getFragmento() );
+                        } else {
+                            outputStream.write( mensagemFragmentada.getFragmento() );
+                            Mensagem mensagem = (Mensagem) Conection.deserializeObject(outputStream.toByteArray());
+                            MensagemListener.RecebeuMensagem(mensagem);
+                            outputStream = new ByteArrayOutputStream();
+                        }
+                        System.out.println("Recebeu Mensagem Fragmentada");
+                    }
                     sock.close();
                 } catch (Exception e) {
-                    System.err.println(e.getMessage());
+                    System.err.println("Listen Error: " + e.getMessage());
+                    System.err.println("Listen Error: " + e.getStackTrace().toString());
                     break;
                 }
             }
@@ -89,6 +111,7 @@ public class Network {
 
     public void sendTransfer(PilaCoin pila) {
         try {
+            System.out.println("Transfering trougt udp...");
             Mensagem mensagem = new Mensagem();
             mensagem.setPorta(this.portReceive);
             mensagem.setEndereco(InetAddress.getLocalHost());
@@ -96,10 +119,24 @@ public class Network {
             mensagem.setTipo(Mensagem.TipoMensagem.PILA_TRANSF);
             mensagem.setChavePublica(Me.MyPubKey());
             mensagem.setPilaCoin(pila);
-            byte[] buf = Conection.serializeObject(mensagem);
-            DatagramPacket packet = new DatagramPacket(buf, buf.length, address, port);
 
-            socket.send(packet);
+
+            byte[] buf = Conection.serializeObject(mensagem);
+            int cont = 0;
+            byte[][] fragmentos = divideArray(buf,1000);
+            for (byte[] frag : fragmentos) {
+                MensagemFragmentada mensfrag = new MensagemFragmentada();
+                mensfrag.setSequencia(cont);
+                mensfrag.setFragmento(frag);
+                cont++;
+                mensfrag.setUltimo(fragmentos.length == cont);
+                DatagramPacket packet = new DatagramPacket( Conection.serializeObject(mensfrag),  Conection.serializeObject(mensfrag).length, address, port);
+                socket.send(packet);
+                Thread.sleep(350);
+            }
+
+            System.out.println("UDP Send");
+
         } catch (Exception e) {
             System.err.println("Sending failed. " + e.getMessage());
         }
@@ -126,5 +163,20 @@ public class Network {
             PilaCoinListener.InvocaValidaObjetoTroca(troca, aesSession);
         }
         conexao.close();
+    }
+
+    public static byte[][] divideArray(byte[] source, int chunksize) {
+
+
+        byte[][] ret = new byte[(int)Math.ceil(source.length / (double)chunksize)][chunksize];
+
+        int start = 0;
+
+        for(int i = 0; i < ret.length; i++) {
+            ret[i] = Arrays.copyOfRange(source,start, start + chunksize);
+            start += chunksize ;
+        }
+
+        return ret;
     }
 }

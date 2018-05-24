@@ -49,7 +49,10 @@ public class MensagemController {
                 }
                 break;
             case PILA_TRANSF:
-
+                System.out.println("Recebeu pila transf");
+                System.out.println("ID: " + Mensagem.getIdOrigem());
+                System.out.println("ENDEREÇO: " + Mensagem.getEndereco().toString());
+                System.out.println("PORTA: " + Mensagem.getPorta());
 
                 break;
             case ERRO:

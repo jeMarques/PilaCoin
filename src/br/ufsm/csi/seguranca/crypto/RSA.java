@@ -68,6 +68,12 @@ public class RSA {
         return cipher.doFinal(data);
     }
 
+    public static byte[] CypherWithMyPrivateKey(byte[] data) throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, Me.MyPrivateKey());
+        return cipher.doFinal(data);
+    }
+
 
     public static boolean validateSignature(Object mensagemOrTroca) throws Exception {
         if (mensagemOrTroca instanceof Mensagem) {

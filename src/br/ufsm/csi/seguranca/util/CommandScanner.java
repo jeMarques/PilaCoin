@@ -45,7 +45,7 @@ public class CommandScanner {
                         }
                     }
                 } catch (Exception e) {
-                    System.err.println(e.getMessage());
+                    System.err.println("Erro Scanner: " + e.getMessage());
                     break;
                 }
             }
